@@ -1,14 +1,12 @@
 const express = require("express");
 const app = express();
 const compression = require("compression");
-
-
 const cookieSession = require("cookie-session");
 const csurf = require("csurf");
 const { sendEmail } = require("./ses.js");
 const { ElastiCache, ApiGatewayManagementApi } = require("aws-sdk");
 const cryptoRandomString = require("crypto-random-string");
-
+const email = "rapposelli.giacomo@gmail.com"
 app.use(express.static(__dirname + "/public"));
 app.use(compression());
 
