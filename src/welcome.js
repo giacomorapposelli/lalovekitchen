@@ -1,23 +1,22 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
-function Welcome(){
+function Welcome() {
     const [className, setClassName] = useState("logo-container");
 
     useEffect(() => {
         setTimeout(() => {
-            setClassName("logo-container fadeout"); 
+            setClassName("logo-container fadeout");
         }, 2500);
         setTimeout(() => {
-            location.replace("/home")
-        },3000)
+            location.replace("/home");
+        }, 3000);
     }, []);
 
-    return (<div className={className}>
-                {/* {" "}
-                <div className="box"> */}
-                <img className="logo" src="images/logo.png" alt="logo"></img>
-                {/* </div>{" "} */}
-            </div>)
+    return (
+        <div className={className}>
+            <img className="logo" src="images/logo.png" alt="logo"></img>
+        </div>
+    );
 }
 
-export default Welcome
+export default Welcome;
