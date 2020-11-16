@@ -1,24 +1,31 @@
-import React,{useState,useEffect} from "react"
-import Home from "./home"
+import React, { useState, useEffect } from "react";
+import Home from "./home";
+import Welcome from "./welcome"
+import { BrowserRouter, Route } from "react-router-dom";
 
 function App() {
-    const [className,setClassName] = useState("logo-container")
 
-    useEffect(() => {
-        setTimeout(()=> {           
-            setClassName("logo-container fadeout")
-        },3000)
-    },[])
 
-return (
-    <div className="container">
-        <Home />
-        <div className={className}> <div className="box"></div> </div>
-    </div>
-) 
-              
-        
+    return (
+        <div className="container">
+            <BrowserRouter>
+                <Route
+                    exact
+                    path="/"
+                    render={() => (
+                        <Welcome  />                   
+                    )}
+                />
+                <Route
+                exact
+                path="/home"
+                render={() => (
+                    <Home  />                   
+                )}
+            />
+            </BrowserRouter>
+        </div>
+    );
 }
 
-
-export default App
+export default App;

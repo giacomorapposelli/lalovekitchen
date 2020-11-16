@@ -43,7 +43,7 @@ if (process.env.NODE_ENV != "production") {
     app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
 }
 
-app.get("*",function(req,res){
+app.get("*",(req,res) => {
     res.sendFile(__dirname + "/index.html")
 })
 
